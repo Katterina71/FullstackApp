@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import './App.css'
 
 //Local server Development or Production
-const BASE_URL = import.meta.env.DEV ? 'http://localhost:8080/api/todos' : 'https://fullstackapp-gfyd.onrender.com/'
+const BASE_URL = import.meta.env.DEV ? 'http://localhost:8080/api/todos' : 'https://fullstackapp-gfyd.onrender.com/api/todos'
 
 // console.log(import.meta.env)
 // console.log(import.meta.env.DEV)
@@ -102,7 +102,17 @@ useEffect(() => {
         <br/> <br/>
         <button>Add ToDo</button>
       </form>
-      <br/> <br/>  
+      <br/> <br/>
+      { isLoading ? <p>Loading...</p> 
+      :
+      todos.map((todo) => 
+          <div key={todo._id} className='todo-item '>
+            <p 
+            style = {{textDecoration: todo.completed ? 'line-through' : ''}}>{todo.text}</p>
+            <button onClick= {()=> handleDelete(todo._id)}> X </button>
+          </div>
+    
+        )}     
     </>
   )
 }
