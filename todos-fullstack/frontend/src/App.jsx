@@ -1,7 +1,13 @@
 import { useState, useRef, useEffect } from 'react'
 import './App.css'
 
-const BASE_URL = 'http://localhost:8080/api/todos'
+//Local server Development or Production
+const BASE_URL = import.meta.env.DEV ? 'http://localhost:8080/api/todos' : 'https://fullstackapp-gfyd.onrender.com/'
+
+
+
+console.log(import.meta.env)
+console.log(import.meta.env.DEV)
 
 function App() {
  
