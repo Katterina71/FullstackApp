@@ -4,10 +4,8 @@ import './App.css'
 //Local server Development or Production
 const BASE_URL = import.meta.env.DEV ? 'http://localhost:8080/api/todos' : 'https://fullstackapp-gfyd.onrender.com/'
 
-
-
-console.log(import.meta.env)
-console.log(import.meta.env.DEV)
+// console.log(import.meta.env)
+// console.log(import.meta.env.DEV)
 
 function App() {
  
